@@ -8,7 +8,7 @@
 # include "nordic_lib.h"
 # include "nordic_module.h"
 
-
+#include "MKL25Z4.h"
 
 void nrf_config(){
 	NORDIC_CONFIG_MASK_PWR_UP(1);
@@ -38,12 +38,12 @@ void nrf_flush_tx(){
 void nrf_transmit_data(uint8_t *write){
 	uint8_t ch=0;
 	uint8_t l=32;
-	//NRF_CS_DISABLE();
+	NRF_CS_DISABLE();
 	NRF_CS_ENABLE();
 
-	WAIT_SPTEF;
+	//WAIT_SPTEF;
 	SPI0_D=NORDIC_W_TX_PAYLOAD;
-	WAIT_SPRF;
+	//WAIT_SPRF;
 	ch=SPI0_D;
 while (l>0)
 {
@@ -66,10 +66,7 @@ void nrf_config_write() //write to the config register
 	NRF_CS_ENABLE();
 	//TEST_HIGH;
 	//TEST_LOW; //toggle CS
-
-
 	nrf_write_register(NORDIC_CONFIG_BASE);
-
 	spi_send(0x03);
 
 }

@@ -31,7 +31,11 @@ void main()
 		    //	count = TSI_Stop_check();
 		    	count = count;
 		    	//spi_send(temperature);
-		    	nrf_config_write(temperature);
+		    	uint8_t k[32]={0x35, temperature, temperature, temperature};
+		    	uint8_t *k_ptr;
+		    	k_ptr=k;
+
+		    	nrf_transmit_data(k_ptr);
 
 		    }
 

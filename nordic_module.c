@@ -4,26 +4,6 @@
 
 #include "nordic_module.h"
 
-
-	/*void main()
-	{
-		spi0_init();*/
-		/*while(1)
-		{
-	spi_send('a');
-	SPI0_D = 'a';
-	//out_char ('a');
-	}*/
-//}
-
-/*void SPI0_IRQHandler(){
-	char m='a';
-	while (!(SPI_S_SPTEF_MASK & SPI0_S))
-	{
-		SPI0_D = m;
-	}
-}*/
-
 void spi0_init()
 
 {
@@ -58,10 +38,10 @@ unsigned char spi_send(char m)
 {
 	uint8_t ch =0;
 
-	 while(WAIT_SPTEF);
+//	 while(WAIT_SPTEF);
 	SPI0_D=m;
 
-	 while(WAIT_SPRF);
+//	 while(WAIT_SPRF);
 	 ch=SPI0_D;
 
 	while(WAIT_SPTEF);
