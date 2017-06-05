@@ -8,6 +8,7 @@
 #include "ADC.h"
 # include "capacitive_touch.h"
 #include "nordic_module.h"
+#include "nordic_lib.h"
 void main()
 	{
 		int temp_1,temp_2,temp_3;
@@ -29,7 +30,9 @@ void main()
 		    	while(!(TSI0_GENCS & TSI_GENCS_EOSF_MASK));
 		    //	count = TSI_Stop_check();
 		    	count = count;
-		    	spi_send(temperature);
+		    	//spi_send(temperature);
+		    	nrf_config_write(temperature);
+
 		    }
 
 
