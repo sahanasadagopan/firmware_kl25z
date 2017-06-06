@@ -23,6 +23,8 @@ Then there is a stop function that sets the end of scan flag bit high which stop
 As the scan detectes a change in the voltage the data that is being measured from the temperature sensor continously would send the data to the nordic module that is connected to the . The nordic nrf24l01+ is a wireless module that communicates through SPI protocoal there are simple 7 pin connection between the Nordic and the FRDM KL25Z4.
 
 There is a CE and CSN pin which is used enabled high when the module is sending or recieving data and the other is used for chip select pin.
+
 Nordic module 
+
 First comes the process of initialising the register to write on the nordic module the chip select pin is disabled and then again enabled back before sending data through the nordic module.
 SPI0 data register are used to write to the nordic module . while interacting with nordic module the register address where the data is being written should also be initialised.
