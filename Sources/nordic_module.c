@@ -15,8 +15,8 @@ void spi0_init()
 	PORTC_PCR6 = PORT_PCR_MUX(2); //MOSI
 	PORTC_PCR7 = PORT_PCR_MUX(2);
 	PTC_BASE_PTR->PDDR |= 1<<4;
-	SPI0_C1 = 0x50;
-	SPI0_BR = 0x03;
+	SPI0_C1 = SPI_C1_SPE_MASK|SPI_C1_MSTR_MASK ;//Enable master and enable SPI0
+	SPI0_BR = SPI_BR_SPR(3)|SPI_BR_SPPR(0); // Setting the baud rate
 }
 
 unsigned char spi_send(char m)
