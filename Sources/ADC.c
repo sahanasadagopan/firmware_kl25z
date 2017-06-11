@@ -40,19 +40,17 @@ void adc_init()
 	adc_calibrate();
 	ADC0_CFG1 = 0; // Reset register
 
-		// ADC0_SC1A =26;
+	
 	ADC0_CFG1 = ADC_CFG1_ADICLK(0)|//Bus clock selected
 					    ADC_CFG1_MODE(3)|//16 bit mode for conversion(resolution)
 					    ADC_CFG1_ADIV(1);//clock div
-	//ADC0_SC2 |=ADC_SC2_ADTRG(1);
+	
 	ADC0_CFG2 |= ADC_CFG2_ADLSTS(3);
-			//ADC0_SC3 |= ADC_SC3_AVGS(3) | ADC_SC3_AVGE_MASK;
 			ADC0_SC3 = 0; // Reset SC3
 	ADC0_SC2  |= ADC_SC2_DMAEN_MASK;//Activating DMA
 	ADC0_SC1A =31;
 	ADC0_SC1A =26;
-		//ADC0_SC1A |= ADC_SC1_DIFF_MASK;
-		//ADC0_SC1A |= 0x1A;//selecting Differential mode and temperature sensor channel
+		
 
 	}
 
