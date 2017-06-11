@@ -28,3 +28,12 @@ Nordic module
 
 First comes the process of initialising the register to write on the nordic module the chip select pin is disabled and then again enabled back before sending data through the nordic module.
 SPI0 data register are used to write to the nordic module . while interacting with nordic module the register address where the data is being written should also be initialised.
+
+Running the project
+
+The project was created and flashed on the MKL25Z4 board using the KDS(kinetic design studio IDE). The files were created and executed in and executed by not using project manager.
+The simpliest way to execute the code is to import thge project setting, debug folder ,the source and header folder to the IDE and flash the code on the board to execute them.
+
+The Makefile of the project is present in the DEBUG folder.
+
+To run the following download the KDS and import the project folder in them or download the make file and the souce codes adn execute them through the makefile.
