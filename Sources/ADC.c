@@ -30,7 +30,7 @@
 
 #include "MKL25Z4.h"
 #include "ADC.h"
-static int i = 0;
+
 
 void adc_init()
 {
