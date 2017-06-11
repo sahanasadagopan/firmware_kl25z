@@ -9,7 +9,7 @@
 # include "nordic_module.h"
 
 #include "MKL25Z4.h"
-
+// initialising nordic module
 void nrf_config(){
 	NORDIC_CONFIG_MASK_PWR_UP(1);
 
@@ -27,14 +27,13 @@ void nrf_read_register(unsigned char address){
 
 }
 
-//void nrf_transmit_data(const void *buf, uint8_t len){
 
-//}
 void nrf_flush_tx(){
 	TEST_LOW;
 	spi_send(0xE2);
 	TEST_HIGH;
 }
+//transmitting data from nordic
 void nrf_transmit_data(uint8_t *write){
 	uint8_t ch=0;
 	uint8_t l=32;
@@ -55,9 +54,7 @@ while (l>0)
 	write++;
 }
 }
-//void main(){
 
-//}*/
 void nrf_config_write() //write to the config register
 {
 //	while(WAIT_SPTEF);
