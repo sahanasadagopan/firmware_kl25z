@@ -34,7 +34,8 @@ void main()
 		    	uint8_t k[32]={0x35, temperature, temperature, temperature};
 		    	uint8_t *k_ptr;
 		    	k_ptr=k;
-
+		    	spi0_init();
+		    	spi_send(temperature);
 		    	nrf_transmit_data(k_ptr);
 
 		    }

@@ -41,9 +41,9 @@ void nrf_transmit_data(uint8_t *write){
 	NRF_CS_DISABLE();
 	NRF_CS_ENABLE();
 
-	//WAIT_SPTEF;
+	WAIT_SPTEF;
 	SPI0_D=NORDIC_W_TX_PAYLOAD;
-	//WAIT_SPRF;
+	WAIT_SPRF;
 	ch=SPI0_D;
 while (l>0)
 {
