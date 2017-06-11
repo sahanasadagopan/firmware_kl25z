@@ -37,7 +37,7 @@ void TSI_Start(int CH_IP)
 	TSI0_DATA|=TSI_DATA_SWTS_MASK;
 }
 
-inline static uint16_t TSI_Stop_check()
+uint16_t TSI_Stop_check()
 {
 	TSI0_GENCS |= TSI_GENCS_EOSF_MASK;
 	return TSI0_DATA & TSI_DATA_TSICNT_MASK;

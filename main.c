@@ -23,20 +23,25 @@ void main()
 		TSI_init();
 		    uint16_t count;
 		    uint16_t k=0;
+		    int tap=0;
 		    while(1)
 		    {
 		    	//TSI_Start(11);
 		    	TSI_Start(9);
+		    	//count = count;
 		    	while(!(TSI0_GENCS & TSI_GENCS_EOSF_MASK));
-		    //	count = TSI_Stop_check();
+		    	count = TSI_Stop_check();
 		    	count = count;
+                if(count>0x26){
 		    	//spi_send(temperature);
-		    	uint8_t k[32]={0x35, temperature, temperature, temperature};
+		    	uint8_t k[32]={temperature, temperature, temperature};
 		    	uint8_t *k_ptr;
 		    	k_ptr=k;
 		    	spi0_init();
 		    	spi_send(temperature);
 		    	nrf_transmit_data(k_ptr);
+                tap=tap+1;
+                }
 
 		    }
 

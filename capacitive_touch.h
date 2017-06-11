@@ -10,7 +10,7 @@
 
 void TSI_init();
 void TSI_Start(int CH_IP);
-static uint16_t TSI_Stop_check();
+uint16_t TSI_Stop_check();
 
 
 
